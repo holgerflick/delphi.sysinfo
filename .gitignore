@@ -1,0 +1,61 @@
+# Delphi compiled units
+*.dcu
+*.dcp
+*.dcpil
+*.drc
+
+# Executables
+*.exe
+*.dll
+*.bpl
+
+# Delphi temporary files
+*.~*
+*.ddp
+*.rsm
+*.dof
+*.cfg
+*.map
+*.dsk
+*.identcache
+*.local
+*.stat
+
+# Backup files
+*.bak
+__history/
+__recovery/
+
+# IDE files
+*.dproj.local
+*.groupproj.local
+*.otares
+
+# Build output directories
+Win32/
+Win64/
+Debug/
+Release/
+__history/
+__recovery/
+
+# Package files
+*.dpk~
+*.dsk~
+
+# C++ Builder
+*.obj
+*.o
+*.pch
+*.bpi
+*.lib
+*.a
+*.hpp
+
+# Android/iOS builds
+Android/
+iOSDevice/
+iOSSimulator/
+
+# Mac builds
+*.dSYM/
