@@ -1,0 +1,79 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Delphi source files - use CRLF (Windows line endings)
+*.pas text eol=crlf
+*.dpr text eol=crlf
+*.dpk text eol=crlf
+*.dproj text eol=crlf
+*.dfm text eol=crlf
+*.fmx text eol=crlf
+*.res binary
+*.dcu binary
+*.dcp binary
+*.bpl binary
+*.bpi binary
+*.lib binary
+*.a binary
+*.o binary
+*.obj binary
+
+# Configuration files - use CRLF
+*.cfg text eol=crlf
+*.dof text eol=crlf
+*.ini text eol=crlf
+
+# Documentation files - use LF
+*.md text eol=lf
+*.txt text eol=lf
+README text eol=lf
+LICENSE text eol=lf
+CHANGELOG text eol=lf
+
+# Project files - use CRLF
+*.groupproj text eol=crlf
+*.bdsproj text eol=crlf
+*.dproj text eol=crlf
+*.cbproj text eol=crlf
+
+# Resource files
+*.rc text eol=crlf
+*.resx text eol=crlf
+
+# Binary files
+*.exe binary
+*.dll binary
+*.bpl binary
+*.dcp binary
+*.dcu binary
+*.lib binary
+*.bpi binary
+*.pdb binary
+*.map binary
+*.rsm binary
+*.tds binary
+*.drc binary
+*.res binary
+*.ico binary
+*.bmp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+
+# Archive files
+*.zip binary
+*.7z binary
+*.rar binary
+*.gz binary
+*.tar binary
+
+# Git merge strategy for DFM/FMX files
+*.dfm merge=union
+*.fmx merge=union
+
+# Linguist overrides for GitHub language detection
+*.pas linguist-language=Pascal
+*.dpr linguist-language=Pascal
+*.dpk linguist-language=Pascal
+*.inc linguist-language=Pascal
