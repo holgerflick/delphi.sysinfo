@@ -28,7 +28,6 @@ package SysInfoD;
 {$IMPLICITBUILD ON}
 {$DESCRIPTION 'System Information Component (Design-Time)'}
 {$DESIGNONLY}
-{$RUNONLY}
 
 requires
   rtl,
