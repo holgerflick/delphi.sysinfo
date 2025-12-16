@@ -10,11 +10,14 @@ object FormMain: TFormMain
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object SysInfo1: TSysInfo
+    Left = 688
+    Top = 8
+  end
   object PageControl1: TPageControl
     Left = 0
     Top = 0

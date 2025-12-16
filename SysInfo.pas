@@ -91,61 +91,60 @@ type
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
     procedure RefreshAll;
-
     property DiskList: TDiskList read FDiskList;
+  published
+    property CPUName: string read GetCPUName stored False;
+    property CPUVendor: string read GetCPUVendor stored False;
+    property CPUIdentifier: string read GetCPUIdentifier stored False;
+    property CPUSpeed: Integer read GetCPUSpeed stored False;
+    property CPUCount: Integer read GetCPUCount stored False;
+    property CPUArchitecture: string read GetCPUArchitecture stored False;
 
-    property CPUName: string read GetCPUName;
-    property CPUVendor: string read GetCPUVendor;
-    property CPUIdentifier: string read GetCPUIdentifier;
-    property CPUSpeed: Integer read GetCPUSpeed;
-    property CPUCount: Integer read GetCPUCount;
-    property CPUArchitecture: string read GetCPUArchitecture;
+    property TotalMemory: Int64 read GetTotalMemory stored False;
+    property AvailableMemory: Int64 read GetAvailableMemory stored False;
+    property MemoryLoad: Integer read GetMemoryLoad stored False;
+    property PageFileTotal: Int64 read GetPageFileTotal stored False;
+    property PageFileFree: Int64 read GetPageFileFree stored False;
 
-    property TotalMemory: Int64 read GetTotalMemory;
-    property AvailableMemory: Int64 read GetAvailableMemory;
-    property MemoryLoad: Integer read GetMemoryLoad;
-    property PageFileTotal: Int64 read GetPageFileTotal;
-    property PageFileFree: Int64 read GetPageFileFree;
+    property MainboardManufacturer: string read GetMainboardManufacturer stored False;
+    property MainboardProduct: string read GetMainboardProduct stored False;
+    property BIOSVendor: string read GetBIOSVendor stored False;
+    property BIOSVersion: string read GetBIOSVersion stored False;
+    property BIOSDate: string read GetBIOSDate stored False;
 
-    property MainboardManufacturer: string read GetMainboardManufacturer;
-    property MainboardProduct: string read GetMainboardProduct;
-    property BIOSVendor: string read GetBIOSVendor;
-    property BIOSVersion: string read GetBIOSVersion;
-    property BIOSDate: string read GetBIOSDate;
+    property WindowsDirectory: string read GetWindowsDirectory stored False;
+    property SystemDirectory: string read GetSystemDirectory stored False;
+    property TempDirectory: string read GetTempDirectory stored False;
+    property ProgramFilesDirectory: string read GetProgramFilesDirectory stored False;
+    property ProgramFilesX86Directory: string read GetProgramFilesX86Directory stored False;
+    property CommonFilesDirectory: string read GetCommonFilesDirectory stored False;
 
-    property WindowsDirectory: string read GetWindowsDirectory;
-    property SystemDirectory: string read GetSystemDirectory;
-    property TempDirectory: string read GetTempDirectory;
-    property ProgramFilesDirectory: string read GetProgramFilesDirectory;
-    property ProgramFilesX86Directory: string read GetProgramFilesX86Directory;
-    property CommonFilesDirectory: string read GetCommonFilesDirectory;
+    property DesktopDirectory: string read GetDesktopDirectory stored False;
+    property DocumentsDirectory: string read GetDocumentsDirectory stored False;
+    property MusicDirectory: string read GetMusicDirectory stored False;
+    property PicturesDirectory: string read GetPicturesDirectory stored False;
+    property VideosDirectory: string read GetVideosDirectory stored False;
+    property DownloadsDirectory: string read GetDownloadsDirectory stored False;
+    property StartMenuDirectory: string read GetStartMenuDirectory stored False;
+    property StartupDirectory: string read GetStartupDirectory stored False;
 
-    property DesktopDirectory: string read GetDesktopDirectory;
-    property DocumentsDirectory: string read GetDocumentsDirectory;
-    property MusicDirectory: string read GetMusicDirectory;
-    property PicturesDirectory: string read GetPicturesDirectory;
-    property VideosDirectory: string read GetVideosDirectory;
-    property DownloadsDirectory: string read GetDownloadsDirectory;
-    property StartMenuDirectory: string read GetStartMenuDirectory;
-    property StartupDirectory: string read GetStartupDirectory;
+    property AppDataDirectory: string read GetAppDataDirectory stored False;
+    property LocalAppDataDirectory: string read GetLocalAppDataDirectory stored False;
+    property CommonAppDataDirectory: string read GetCommonAppDataDirectory stored False;
 
-    property AppDataDirectory: string read GetAppDataDirectory;
-    property LocalAppDataDirectory: string read GetLocalAppDataDirectory;
-    property CommonAppDataDirectory: string read GetCommonAppDataDirectory;
+    property UserName: string read GetUserName stored False;
+    property UserDirectory: string read GetUserDirectory stored False;
+    property ComputerName: string read GetComputerName stored False;
+    property UserDomain: string read GetUserDomain stored False;
 
-    property UserName: string read GetUserName;
-    property UserDirectory: string read GetUserDirectory;
-    property ComputerName: string read GetComputerName;
-    property UserDomain: string read GetUserDomain;
+    property WindowsVersion: string read GetWindowsVersion stored False;
+    property WindowsBuild: string read GetWindowsBuild stored False;
+    property WindowsProductName: string read GetWindowsProductName stored False;
+    property SystemUptime: Int64 read GetSystemUptime stored False;
 
-    property WindowsVersion: string read GetWindowsVersion;
-    property WindowsBuild: string read GetWindowsBuild;
-    property WindowsProductName: string read GetWindowsProductName;
-    property SystemUptime: Int64 read GetSystemUptime;
-
-    property IsAdmin: Boolean read GetIsAdmin;
-    property Is64BitOS: Boolean read GetIs64BitOS;
-    property Is64BitProcess: Boolean read GetIs64BitProcess;
+    property IsAdmin: Boolean read GetIsAdmin stored False;
+    property Is64BitOS: Boolean read GetIs64BitOS stored False;
+    property Is64BitProcess: Boolean read GetIs64BitProcess stored False;
   end;
 
 implementation

@@ -95,7 +95,9 @@ A comprehensive Delphi VCL component that provides detailed information about co
 ### Design-Time Usage
 
 1. Drop a `TSysInfo` component onto your form from the "System" category
-2. Access properties at runtime:
+2. **All properties are published** and visible in the Object Inspector at design-time
+3. Properties are read-only and retrieve live system information at runtime
+4. Access properties at runtime:
 
 ```pascal
 procedure TForm1.Button1Click(Sender: TObject);
@@ -106,6 +108,8 @@ begin
   ShowMessage('Documents: ' + SysInfo1.DocumentsDirectory);
 end;
 ```
+
+**Note:** All properties have `stored False` to prevent saving values to the DFM since they are dynamically retrieved from the system.
 
 ### Runtime Usage
 
