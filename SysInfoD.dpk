@@ -37,6 +37,6 @@ requires
   SysInfoR;
 
 contains
-  SysInfo in 'SysInfo.pas';
+  SysInfoReg in 'SysInfoReg.pas';
 
 end.

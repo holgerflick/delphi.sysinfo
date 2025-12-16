@@ -148,8 +148,6 @@ type
     property Is64BitProcess: Boolean read GetIs64BitProcess;
   end;
 
-procedure Register;
-
 implementation
 
 uses
@@ -833,11 +831,6 @@ begin
   {$ELSE}
   Result := False;
   {$ENDIF}
-end;
-
-procedure Register;
-begin
-  RegisterComponents('System', [TSysInfo]);
 end;
 
 end.
