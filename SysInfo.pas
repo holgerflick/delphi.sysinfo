@@ -274,7 +274,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('HARDWARE\DESCRIPTION\System\CentralProcessor\0') then
@@ -293,7 +293,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('HARDWARE\DESCRIPTION\System\CentralProcessor\0') then
@@ -312,7 +312,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('HARDWARE\DESCRIPTION\System\CentralProcessor\0') then
@@ -331,7 +331,7 @@ var
   Reg: TRegistry;
 begin
   Result := 0;
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('HARDWARE\DESCRIPTION\System\CentralProcessor\0') then
@@ -362,7 +362,7 @@ begin
     PROCESSOR_ARCHITECTURE_INTEL: Result := 'x86 (32-bit)';
     PROCESSOR_ARCHITECTURE_AMD64: Result := 'x64 (64-bit)';
     PROCESSOR_ARCHITECTURE_ARM: Result := 'ARM';
-    PROCESSOR_ARCHITECTURE_ARM64: Result := 'ARM64';
+    12: Result := 'ARM64';  // PROCESSOR_ARCHITECTURE_ARM64 = 12
     PROCESSOR_ARCHITECTURE_IA64: Result := 'IA64';
   else
     Result := 'Unknown';
@@ -419,7 +419,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('HARDWARE\DESCRIPTION\System\BIOS') then
@@ -438,7 +438,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('HARDWARE\DESCRIPTION\System\BIOS') then
@@ -457,7 +457,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('HARDWARE\DESCRIPTION\System\BIOS') then
@@ -476,7 +476,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('HARDWARE\DESCRIPTION\System\BIOS') then
@@ -495,7 +495,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('HARDWARE\DESCRIPTION\System\BIOS') then
@@ -513,7 +513,7 @@ function TSysInfo.GetWindowsDirectory: string;
 var
   Buffer: array[0..MAX_PATH] of Char;
 begin
-  GetWindowsDirectory(Buffer, MAX_PATH);
+  Winapi.Windows.GetWindowsDirectory(Buffer, MAX_PATH);
   Result := Buffer;
 end;
 
@@ -521,7 +521,7 @@ function TSysInfo.GetSystemDirectory: string;
 var
   Buffer: array[0..MAX_PATH] of Char;
 begin
-  GetSystemDirectory(Buffer, MAX_PATH);
+  Winapi.Windows.GetSystemDirectory(Buffer, MAX_PATH);
   Result := Buffer;
 end;
 
@@ -618,7 +618,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_CURRENT_USER;
     if Reg.OpenKeyReadOnly('Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders') then
@@ -688,7 +688,7 @@ var
   Size: DWORD;
 begin
   Size := SizeOf(Buffer);
-  if GetUserName(Buffer, Size) then
+  if Winapi.Windows.GetUserName(Buffer, Size) then
     Result := Buffer
   else
     Result := '';
@@ -710,7 +710,7 @@ var
   Size: DWORD;
 begin
   Size := SizeOf(Buffer);
-  if GetComputerName(Buffer, Size) then
+  if Winapi.Windows.GetComputerName(Buffer, Size) then
     Result := Buffer
   else
     Result := '';
@@ -733,7 +733,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('SOFTWARE\Microsoft\Windows NT\CurrentVersion') then
@@ -752,7 +752,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('SOFTWARE\Microsoft\Windows NT\CurrentVersion') then
@@ -771,7 +771,7 @@ var
   Reg: TRegistry;
 begin
   Result := '';
-  Reg := TRegistry.Create(KEY_READ);
+  Reg := TRegistry.Create;
   try
     Reg.RootKey := HKEY_LOCAL_MACHINE;
     if Reg.OpenKeyReadOnly('SOFTWARE\Microsoft\Windows NT\CurrentVersion') then
